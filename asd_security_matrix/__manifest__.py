@@ -33,7 +33,7 @@
         'security/security.xml',
         'security/menus.xml',
         # 'security/ir.model.access.csv',
-        # 'views/account_editbutton.xml',
+        'views/account_editbutton.xml',
         'views/account_move_views.xml',
         'views/account_payment_views.xml',
         'views/cash_advance_views.xml',
@@ -42,12 +42,6 @@
         'views/voucher_views.xml',
     ],
     # only loaded in demonstration mode
-
-    'assets': {
-        'web.assets_backend': [
-            'asd_security_matrix/static/js/web_button.js',  # JavaScript untuk tombol Edit
-        ],
-    },
 
     "test": [],
     "js": [],

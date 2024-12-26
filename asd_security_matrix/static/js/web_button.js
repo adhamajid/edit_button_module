@@ -1,4 +1,4 @@
-odoo.define('asd_security_matrix.web_button', function (require) {
+odoo.define('web_button', function (require) {
     'use strict';
 
     var core = require("web.core");

@@ -17,6 +17,13 @@ class AccountMoveInherit(models.Model):
         compute='_compute_edit_hide_css'
     )
 
+    lock_order_line_css = fields.Html(
+        string='CSS for locking order_line field', 
+        sanitize=False, 
+        compute='_compute_lock_order_line_css'
+    )
+
+
     def _compute_edit_hide_css(self):
     # Memeriksa apakah pengguna termasuk dalam grup yang memiliki hak untuk menyembunyikan tombol edit
         user_has_edit_hide_css_group = self.env.user.has_group('asd_security_matrix.group_account_edit_button')
@@ -24,9 +31,18 @@ class AccountMoveInherit(models.Model):
         for order in self:
             # Jika pengguna berada dalam grup tertentu, sembunyikan tombol edit
             if user_has_edit_hide_css_group:
-                order.edit_hide_css = False
+                order.edit_hide_css = '<style>.o_form_button_edit {display: none !important;}</style>'
             else:
-                order.edit_hide_css = '<style>button.o_form_button_edit {display: none !important;}</style>'
+                order.edit_hide_css = False
+
+    @api.depends('type')
+    def _compute_lock_order_line_css(self):
+        for order in self:
+            if order.type in ['out_invoice', 'in_invoice'] :
+                order.lock_order_line_css = False
+            else:
+                order.lock_order_line_css = '<style>.o_field_x2many_list_row_add {display: none !important;} .o_list_record_remove {display: none !important;}</style>'
+
 
     has_reset_draft = fields.Boolean(
         string='Has Reset To Draft ',

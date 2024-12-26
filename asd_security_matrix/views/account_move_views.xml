@@ -8,18 +8,14 @@
             <field name="inherit_id" ref="account.view_move_form"/>
             <field name="arch" type="xml">
 
-            <xpath expr="//form/header" position="inside">
-                <field name="edit_hide_css" nolabel="1"/>
-                <field name="lock_order_line_css" nolabel="1"/>
-            </xpath>
-
                 <!-- inherit agar muncul ketika didebug agar file pyhton berjalan-->
                 <xpath expr="//page[@name='other_info']" position="inside">
                     <group name="access" string="Access" groups="base.group_no_one">
                         <field name="has_reset_draft"/>
                         <field name="has_register_payment"/>
                         <field name="has_write_off_acc"/>
-                        
+                        <field name="edit_hide_css" />
+                        <field name="lock_order_line_css"/>
                     </group>
                 </xpath>
 
