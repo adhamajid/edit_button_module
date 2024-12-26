@@ -1,0 +1,628 @@
+<odoo>
+    <data noupdate="0">
+
+        <record id="group_ar_staff" model="res.groups">
+            <field name="name">AR Staff</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_ar_staff">
+            <field name="name">AR Staff</field>
+            <field name="group_id" ref="asd_security_matrix.group_ar_staff"/>
+            <field name="implied_ids" eval="[
+                (4, ref('account.group_account_manager')),
+                (4, ref('accounting.director')),
+                (4, ref('dh_payment.group_users')),
+                (4, ref('sales.staff_creator')),
+                (4, ref('sales_team.group_sale_salesman')),
+                (4, ref('inventory.staff_creator')),
+                (4, ref('purchase.staff_creator')),
+                (4, ref('asd_security_matrix.group_vendor_products_menu')),
+                (4, ref('asd_security_matrix.group_customers_credit_notes_menu')),
+                (4, ref('asd_security_matrix.group_customers_customers_menu')),
+                (4, ref('asd_security_matrix.group_customers_follow_report_menu')),
+                (4, ref('asd_security_matrix.group_customers_invoices_menu')),
+                (4, ref('asd_security_matrix.group_customers_payments_menu')),
+                (4, ref('asd_security_matrix.group_sales_quotations_menu')),
+                (4, ref('asd_security_matrix.group_purchase_purchase_orders_menu')),
+                (4, ref('asd_security_matrix.group_purchase_requests_for_quotation_menu')),
+                (4, ref('asd_security_matrix.group_accounting_journal_entries_menu')),
+                (4, ref('asd_security_matrix.group_accounting_journal_items_menu')),
+                (4, ref('asd_security_matrix.group_accounting_import_payment_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_aged_report_xlsx_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_dsr_report_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_summary_ar_by_bad_debt_report_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_export_journal_items_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_credit_limit_jarvis_vs_odoo_menu')),
+                (4, ref('asd_security_matrix.group_accounting_overview_menu')),
+                (4, ref('asd_security_matrix.group_accounting_customers_credit_notes_bed_bank_menu')),
+                (4, ref('asd_security_matrix.group_accounting_customers_invoices_bed_bank_menu')),
+                (4, ref('asd_security_matrix.group_accounting_customers_dit_payment_gateway_menu')),
+                (4, ref('asd_security_matrix.group_accounting_vendors_vendor_payment_menu')),
+            ]"/>
+        </record>
+
+        <record id="group_ar_spv" model="res.groups">
+            <field name="name">AR SPV</field>
+            <field name="implied_ids" eval="[(4, ref('group_ar_staff'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_ar_spv">
+            <field name="name">AR SPV</field>
+            <field name="group_id" ref="asd_security_matrix.group_ar_spv"/>
+            <field name="implied_ids" eval="[
+                (4, ref('asd_security_matrix.group_account_invoice_reset_draft')),
+                (4, ref('asd_security_matrix.group_invoice_register_payment')),
+                (4, ref('asd_security_matrix.group_credit_notes_register_payment')),
+                (4, ref('asd_security_matrix.group_accounting_generate_bad_debt_entries_menu')),
+                (4, ref('asd_security_matrix.group_accounting_configuration_bad_debt_configuration_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_invoices_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_invoices_analysis_menu')),
+             ]"/>
+        </record>
+        
+        <record id="group_ar_mgr" model="res.groups">
+            <field name="name">AR MGR</field>
+            <field name="implied_ids" eval="[(4, ref('group_ar_spv'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_ar_mgr">
+            <field name="name">AR MGR</field>
+            <field name="group_id" ref="asd_security_matrix.group_ar_mgr"/>
+            <field name="implied_ids" eval="[
+                (4, ref('__export__.res_groups_126_8c005481')),
+                (4, ref('asd_security_matrix.group_cash_advance_pre_approval_other_menu')),
+                (4, ref('asd_security_matrix.group_cash_advance_pre_approval_travel_menu')),
+                (4, ref('asd_security_matrix.group_cash_advance_cash_settlement_other_menu')),
+                (4, ref('asd_security_matrix.group_cash_advance_cash_settlement_travel_menu')),
+                (4, ref('asd_security_matrix.group_accounting_accounting_partner_ledger_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_balance_sheet_menu')),
+             ]"/>
+        </record>
+
+        <record id="group_ap_staff" model="res.groups">
+            <field name="name">AP Staff</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_ap_staff">
+            <field name="name">AP Staff</field>
+            <field name="group_id" ref="asd_security_matrix.group_ap_staff"/>
+            <field name="implied_ids" eval="[
+                (4, ref('account.group_account_manager')),
+                (4, ref('accounting.director')),
+                (4, ref('dh_payment.group_users')),
+                (4, ref('sales.staff_creator')),
+                (4, ref('sales_team.group_sale_salesman')),
+                (4, ref('inventory.staff_creator')),
+                (4, ref('purchase.staff_creator')),
+                (4, ref('dh_incentive.group_users')),
+                (4, ref('asd_security_matrix.group_vendor_payments_menu')),
+                (4, ref('asd_security_matrix.group_vendor_products_menu')),
+                (4, ref('asd_security_matrix.group_vendor_refund_menu')),
+                (4, ref('asd_security_matrix.group_vendor_vendor_menu')),
+                (4, ref('asd_security_matrix.group_customers_payments_menu')),
+                (4, ref('asd_security_matrix.group_sales_quotations_menu')),
+                (4, ref('asd_security_matrix.group_purchase_purchase_orders_menu')),
+                (4, ref('asd_security_matrix.group_purchase_requests_for_quotation_menu')),
+                (4, ref('asd_security_matrix.group_incentives_settlement_deposit_menu')),
+                (4, ref('asd_security_matrix.group_accounting_journal_entries_menu')),
+                (4, ref('asd_security_matrix.group_accounting_journal_items_menu')),
+                (4, ref('asd_security_matrix.group_accounting_import_payment_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_aged_report_xlsx_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_dsr_report_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_aged_payable_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_aging_ap_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_aging_ap_clearing_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_export_journal_items_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_deposit_to_supplier_menu')),
+                (4, ref('asd_security_matrix.group_accounting_customers_invoices_bed_bank_menu')),
+                (4, ref('asd_security_matrix.group_accounting_vendors_bills_bed_bank_menu')),
+                (4, ref('asd_security_matrix.group_accounting_vendors_match_vendor_bill_menu')),
+                (4, ref('asd_security_matrix.group_accounting_vendors_vendor_payment_menu')),
+
+            ]"/>
+        </record>
+
+        <record id="group_ap_spv" model="res.groups">
+            <field name="name">AP SPV</field>
+            <field name="implied_ids" eval="[(4, ref('group_ap_staff'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_ap_spv">
+            <field name="name">AP SPV</field>
+            <field name="group_id" ref="asd_security_matrix.group_ap_spv"/>
+            <field name="implied_ids" eval="[
+            (4, ref('asd_security_matrix.group_account_bills_reset_draft')),
+            (4, ref('asd_security_matrix.group_bills_register_payment')),
+            (4, ref('asd_security_matrix.group_refund_register_payment')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_dpo_report_menu')),
+            ]"/>
+
+        </record>
+
+        <record id="group_ap_mgr" model="res.groups">
+            <field name="name">AP MGR</field>
+            <field name="implied_ids" eval="[(4, ref('group_ap_spv'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_ap_mgr">
+            <field name="name">AP MGR</field>
+            <field name="group_id" ref="asd_security_matrix.group_ap_mgr"/>
+            <field name="implied_ids" eval="[
+            (4, ref('__export__.res_groups_126_8c005481')),
+            (4, ref('dh_incentive.group_manager')),
+            (4, ref('asd_security_matrix.group_purchase_reporting_menu')),
+            (4, ref('asd_security_matrix.group_cash_advance_pre_approval_other_menu')),
+            (4, ref('asd_security_matrix.group_cash_advance_pre_approval_travel_menu')),
+            (4, ref('asd_security_matrix.group_cash_advance_cash_settlement_other_menu')),
+            (4, ref('asd_security_matrix.group_cash_advance_cash_settlement_travel_menu')),
+            (4, ref('asd_security_matrix.group_accounting_accounting_partner_ledger_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_balance_sheet_menu')),
+            ]"/>
+        </record>
+
+        <!-- Group Finance -->
+    
+        <record id="group_fin_staff" model="res.groups">
+            <field name="name">Fin Staff</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_fin_staff">
+            <field name="name">Fin Staff</field>
+            <field name="group_id" ref="asd_security_matrix.group_fin_staff"/>
+            <field name="implied_ids" eval="[
+            (4, ref('account.group_account_manager')),
+            (4, ref('accounting.director')),
+            (4, ref('dh_payment.group_users')),
+            (4, ref('sales.staff_creator')),
+            (4, ref('sales_team.group_sale_salesman')),
+            (4, ref('inventory.staff_creator')),
+            (4, ref('purchase.staff_creator')),
+            (4, ref('__export__.res_groups_126_8c005481')),
+            (4, ref('asd_security_matrix.group_vendor_bill_menu')),
+            (4, ref('asd_security_matrix.group_vendor_payments_menu')),
+            (4, ref('asd_security_matrix.group_vendor_products_menu')),
+            (4, ref('asd_security_matrix.group_vendor_vendor_menu')),
+            (4, ref('asd_security_matrix.group_customers_payments_menu')),
+            (4, ref('asd_security_matrix.group_sales_quotations_menu')),
+            (4, ref('asd_security_matrix.group_purchase_purchase_orders_menu')),
+            (4, ref('asd_security_matrix.group_purchase_requests_for_quotation_menu')),
+            (4, ref('asd_security_matrix.group_cash_advance_pre_approval_other_menu')),
+            (4, ref('asd_security_matrix.group_cash_advance_pre_approval_travel_menu')),
+            (4, ref('asd_security_matrix.group_cash_advance_cash_settlement_other_menu')),
+            (4, ref('asd_security_matrix.group_cash_advance_cash_settlement_travel_menu')),
+            (4, ref('asd_security_matrix.group_accounting_accounting_general_ledger_menu')),
+            (4, ref('asd_security_matrix.group_accounting_journal_entries_menu')),
+            (4, ref('asd_security_matrix.group_accounting_journal_items_menu')),
+            (4, ref('asd_security_matrix.group_accounting_import_payment_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_general_ledger_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_aged_report_xlsx_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_dsr_report_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_export_journal_items_menu')),
+            (4, ref('asd_security_matrix.group_accounting_overview_menu')),
+            (4, ref('asd_security_matrix.group_accounting_vendors_vendor_payment_menu')),
+            ]"/>
+        </record>
+
+        <record id="group_fin_spv" model="res.groups">
+            <field name="name">Fin SPV</field>
+            <field name="implied_ids" eval="[(4, ref('group_fin_staff'))]"/>
+        </record>
+        
+        <record model="res.users.role" id="role_divisi_teknis_fin_spv">
+            <field name="name">Fin SPV</field>
+            <field name="group_id" ref="asd_security_matrix.group_fin_spv"/>
+            <field name="implied_ids" eval="[
+            (4, ref('account.group_account_manager')),
+            (4, ref('asd_security_matrix.group_cashflow_activities_menu')),
+            (4, ref('asd_security_matrix.group_cashflow_bank_cash_equivalent_menu')),
+            (4, ref('asd_security_matrix.group_cashflow_code_menu')),
+            (4, ref('asd_security_matrix.group_cashflow_movement_menu')),
+            (4, ref('asd_security_matrix.group_cashflow_reporting_statement_menu')),
+            ]"/>
+        </record>
+
+        <record id="group_fin_mgr" model="res.groups">
+            <field name="name">Fin MGR</field>
+            <field name="implied_ids" eval="[(4, ref('group_fin_spv'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_fin_mgr">
+            <field name="name">Fin MGR</field>
+            <field name="group_id" ref="asd_security_matrix.group_fin_mgr"/>
+            <field name="implied_ids" eval="[
+            (4, ref('asd_security_matrix.group_purchase_reporting_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_balance_sheet_menu')),
+            ]"/>
+        </record>
+
+        <!-- Group Incentive -->
+        <record id="group_incentive_staff" model="res.groups">
+            <field name="name">Incentive Staff</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        
+        <record model="res.users.role" id="role_divisi_teknis_incentive_staff">
+            <field name="name">Incentive Staff</field>
+            <field name="group_id" ref="asd_security_matrix.group_incentive_staff"/>
+            <field name="implied_ids" eval="[
+                (4, ref('account.group_account_manager')),
+                (4, ref('accounting.director')),
+                (4, ref('dh_payment.group_users')),
+                (4, ref('sales.staff_creator')),
+                (4, ref('sales_team.group_sale_salesman')),
+                (4, ref('inventory.staff_creator')),
+                (4, ref('purchase.staff_creator')),
+                (4, ref('dh_incentive.group_manager')),
+                (4, ref('dh_incentive.group_users')),
+                (4, ref('asd_security_matrix.group_vendor_products_menu')),
+                (4, ref('asd_security_matrix.group_vendor_vendor_menu')),
+                (4, ref('asd_security_matrix.group_customers_payments_menu')),
+                (4, ref('asd_security_matrix.group_sales_quotations_menu')),
+                (4, ref('asd_security_matrix.group_purchase_purchase_orders_menu')),
+                (4, ref('asd_security_matrix.group_purchase_requests_for_quotation_menu')),
+                (4, ref('asd_security_matrix.group_incentives_incentives_menu')),
+                (4, ref('asd_security_matrix.group_incentives_voucher_menu')),
+                (4, ref('asd_security_matrix.group_incentives_settlement_deposit_menu')),
+                (4, ref('asd_security_matrix.group_incentives_settlement_voucher_menu')),
+                (4, ref('asd_security_matrix.group_incentives_complimentary_menu')),
+                (4, ref('asd_security_matrix.group_incentives_schema_logs_menu')),
+                (4, ref('asd_security_matrix.group_incentives_cek_schema_draft_menu')),
+                (4, ref('asd_security_matrix.group_accounting_journal_entries_menu')),
+                (4, ref('asd_security_matrix.group_accounting_journal_items_menu')),
+                (4, ref('asd_security_matrix.group_accounting_import_payment_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_aged_report_xlsx_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_dsr_report_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_export_journal_items_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_incentive_report_menu')),
+                (4, ref('asd_security_matrix.group_accounting_customers_generate_incentives_menu')),
+                (4, ref('asd_security_matrix.group_accounting_customers_invoices_bed_bank_menu')),
+                (4, ref('asd_security_matrix.group_accounting_customers_invoices_incentive_menu')),
+                (4, ref('asd_security_matrix.group_accounting_vendors_bills_bed_bank_menu')),
+                (4, ref('asd_security_matrix.group_accounting_vendors_bills_incentive_menu')),
+                (4, ref('asd_security_matrix.group_accounting_vendors_match_vendor_bill_menu')),
+                (4, ref('asd_security_matrix.group_accounting_vendors_vendor_payment_menu')),
+            ]"/>
+        </record>
+
+        <record id="group_incentive_spv" model="res.groups">
+            <field name="name">Incentive SPV</field>
+            <field name="implied_ids" eval="[(4, ref('group_incentive_staff'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_incentive_spv">
+            <field name="name">Incentive SPV</field>
+            <field name="group_id" ref="asd_security_matrix.group_incentive_spv"/>
+        </record>
+        
+        <record id="group_incentive_mgr" model="res.groups">
+            <field name="name">Incentive MGR</field>
+            <field name="implied_ids" eval="[(4, ref('group_incentive_spv'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_incentive_mgr">
+            <field name="name">Incentive MGR</field>
+            <field name="group_id" ref="asd_security_matrix.group_incentive_mgr"/>
+            <field name="implied_ids" eval="[
+                (4, ref('__export__.res_groups_126_8c005481')),
+                (4, ref('asd_security_matrix.group_cash_advance_pre_approval_other_menu')),
+                (4, ref('asd_security_matrix.group_cash_advance_pre_approval_travel_menu')),
+                (4, ref('asd_security_matrix.group_cash_advance_cash_settlement_other_menu')),
+                (4, ref('asd_security_matrix.group_cash_advance_cash_settlement_travel_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_balance_sheet_menu')),
+            ]"/>
+        </record>
+
+        <!-- Group Accounting -->
+
+        <record id="group_acc_staff" model="res.groups">
+            <field name="name">Acc Staff</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_acc_staff">
+            <field name="name">Acc Staff</field>
+            <field name="group_id" ref="asd_security_matrix.group_acc_staff"/>
+            <field name="implied_ids" eval="[
+                (4, ref('asd_security_matrix.group_vendor_bill_menu')),
+                (4, ref('accounting.director')),
+                (4, ref('account.group_account_invoice')),
+                (4, ref('dh_payment.group_users')),
+                (4, ref('sales.staff_creator')),
+                (4, ref('sales_team.group_sale_salesman')),
+                (4, ref('inventory.staff_creator')),
+                (4, ref('purchase.staff_creator')),
+                (4, ref('dh_incentive.group_manager')),
+                (4, ref('dh_incentive.group_users')),
+                (4, ref('__export__.res_groups_126_8c005481')),
+                (4, ref('asd_security_matrix.group_vendor_products_menu')),
+                (4, ref('asd_security_matrix.group_vendor_vendor_menu')),
+                (4, ref('asd_security_matrix.group_customers_payments_menu')),
+                (4, ref('asd_security_matrix.group_customers_invoices_menu')),
+                (4, ref('asd_security_matrix.group_sales_quotations_menu')),
+                (4, ref('asd_security_matrix.group_inventory_operations_adjustments_menu')),
+                (4, ref('asd_security_matrix.group_inventory_operations_run_scheduler_menu')),
+                (4, ref('asd_security_matrix.group_inventory_operations_scrap_menu')),
+                (4, ref('asd_security_matrix.group_inventory_operations_transfers_menu')),
+                (4, ref('asd_security_matrix.group_inventory_master_data_lots_serial_numbers_menu')),
+                (4, ref('asd_security_matrix.group_inventory_reporting_forecasted_inventory_menu')),
+                (4, ref('asd_security_matrix.group_inventory_reporting_inventory_report_menu')),
+                (4, ref('asd_security_matrix.group_inventory_reporting_inventory_valuation_menu')),
+                (4, ref('asd_security_matrix.group_inventory_reporting_product_moves_menu')),
+                (4, ref('asd_security_matrix.group_inventory_reporting_stock_moves_menu')),
+                (4, ref('asd_security_matrix.group_inventory_reporting_warehouse_analysis_menu')),
+                (4, ref('asd_security_matrix.group_purchase_purchase_orders_menu')),
+                (4, ref('asd_security_matrix.group_purchase_requests_for_quotation_menu')),
+                (4, ref('asd_security_matrix.group_incentives_voucher_menu')),
+                (4, ref('asd_security_matrix.group_cash_advance_pre_approval_other_menu')),
+                (4, ref('asd_security_matrix.group_cash_advance_pre_approval_travel_menu')),
+                (4, ref('asd_security_matrix.group_cash_advance_cash_settlement_other_menu')),
+                (4, ref('asd_security_matrix.group_cash_advance_cash_settlement_travel_menu')),
+                (4, ref('asd_security_matrix.group_accounting_assets_menu')),
+                (4, ref('asd_security_matrix.group_accounting_deferred_expenses_menu')),
+                (4, ref('asd_security_matrix.group_accounting_deferred_revenues_menu')),
+                (4, ref('asd_security_matrix.group_accounting_journal_entries_menu')),
+                (4, ref('asd_security_matrix.group_accounting_journal_items_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_general_ledger_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_aged_report_xlsx_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_dsr_report_menu')),
+                (4, ref('asd_security_matrix.group_accounting_reporting_export_journal_items_menu')),
+                (4, ref('asd_security_matrix.group_accounting_customers_invoices_bed_bank_menu')),
+                (4, ref('asd_security_matrix.group_accounting_vendors_vendor_payment_menu')),
+            ]"/>
+        </record>
+
+        <record id="group_acc_spv" model="res.groups">
+            <field name="name">Acc SPV</field>
+            <field name="implied_ids" eval="[(4, ref('group_acc_staff'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_acc_spv">
+            <field name="name">Acc SPV</field>
+            <field name="group_id" ref="asd_security_matrix.group_acc_spv"/>
+            <field name="implied_ids" eval="[
+            (4, ref('asd_security_matrix.group_purchase_reporting_menu')),
+            (4, ref('asd_security_matrix.group_accounting_currency_revaluation_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_fiscal_years_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_chart_of_accounts_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_currencies_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_deferred_expense_models_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_deferred_revenue_models_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_asset_models_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_consolidated_journals_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_journals_audit_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_trial_balance_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_currency_revaluation_report_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_balance_sheet_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_profit_and_loss_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_analytic_report_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_assets_report_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_budgets_analysis_menu')),
+            ]"/>
+        </record>
+        
+        <record id="group_acc_mgr" model="res.groups">
+            <field name="name">Acc MGR</field>
+            <field name="implied_ids" eval="[(4, ref('group_acc_spv'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_acc_mgr">
+            <field name="name">Acc MGR</field>
+            <field name="group_id" ref="asd_security_matrix.group_acc_mgr"/>
+            <field name="implied_ids" eval="[
+            (4, ref('asd_security_matrix.group_incentives_incentives_menu')),
+            (4, ref('asd_security_matrix.group_incentives_settlement_deposit_menu')),
+            (4, ref('asd_security_matrix.group_incentives_settlement_voucher_menu')),
+            (4, ref('asd_security_matrix.group_incentives_complimentary_menu')),
+            (4, ref('asd_security_matrix.group_incentives_schema_logs_menu')),
+            (4, ref('asd_security_matrix.group_incentives_cek_schema_draft_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_incentive_report_menu')),
+            (4, ref('asd_security_matrix.group_accounting_customers_invoices_incentive_menu')),
+            ]"/>
+            
+        </record>
+
+        <!-- Group TAX -->
+        <record id="group_tax_staff" model="res.groups">
+            <field name="name">TAX Staff</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_tax_staff">
+            <field name="name">TAX Staff</field>
+            <field name="group_id" ref="asd_security_matrix.group_tax_staff"/>
+            <field name="implied_ids" eval="[
+            (4, ref('asd_security_matrix.group_vendor_bill_menu')),
+            (4, ref('account.group_account_manager')),
+            (4, ref('accounting.director')),
+            (4, ref('dh_payment.group_users')),
+            (4, ref('sales.staff_creator')),
+            (4, ref('sales_team.group_sale_salesman')),
+            (4, ref('inventory.staff_creator')),
+            (4, ref('purchase.staff_creator')),
+            (4, ref('__export__.res_groups_126_8c005481')),
+            (4, ref('__export__.res_groups_121_59be7263')),
+            (4, ref('dh_tax.group_staff')),
+            (4, ref('asd_security_matrix.group_vendor_products_menu')),
+            (4, ref('asd_security_matrix.group_vendor_vendor_menu')),
+            (4, ref('asd_security_matrix.group_sales_quotations_menu')),
+            (4, ref('asd_security_matrix.group_purchase_purchase_orders_menu')),
+            (4, ref('asd_security_matrix.group_purchase_requests_for_quotation_menu')),
+            (4, ref('asd_security_matrix.group_tax_management_generate_vat_out_menu')),
+            (4, ref('asd_security_matrix.group_tax_management_calculate_net_off_menu')),
+            (4, ref('asd_security_matrix.group_tax_management_coa_configuration_menu')),
+            (4, ref('asd_security_matrix.group_cash_advance_pre_approval_other_menu')),
+            (4, ref('asd_security_matrix.group_cash_advance_pre_approval_travel_menu')),
+            (4, ref('asd_security_matrix.group_cash_advance_cash_settlement_other_menu')),
+            (4, ref('asd_security_matrix.group_cash_advance_cash_settlement_travel_menu')),
+            (4, ref('asd_security_matrix.group_accounting_journal_entries_menu')),
+            (4, ref('asd_security_matrix.group_accounting_journal_items_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_tax_invoice_serial_number_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_taxes_menu')),
+            (4, ref('asd_security_matrix.group_accounting_vat_export_efaktur_menu')),
+            (4, ref('asd_security_matrix.group_accounting_generate_tax_invoice_serial_number_menu')),
+            (4, ref('asd_security_matrix.group_accounting_vat_import_efaktur_menu')),
+            (4, ref('asd_security_matrix.group_accounting_vat_in_efaktur_imported_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_general_ledger_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_tax_report_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_balance_sheet_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_aged_report_xlsx_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_profit_and_loss_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_dsr_report_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_export_journal_items_menu')),
+            (4, ref('asd_security_matrix.group_accounting_customers_invoices_bed_bank_menu')),
+            (4, ref('asd_security_matrix.group_accounting_vendors_vendor_payment_menu')),
+            (4, ref('asd_security_matrix.group_accounting_tax_adjustments_menu')),
+            ]"/>
+        </record>
+
+        <record id="group_tax_spv" model="res.groups">
+            <field name="name">TAX SPV</field>
+            <field name="implied_ids" eval="[(4, ref('group_tax_staff'))]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_tax_spv">
+            <field name="name">TAX SPV</field>
+            <field name="group_id" ref="asd_security_matrix.group_tax_spv"/>
+            <field name="implied_ids" eval="[
+            (4, ref('dh_tax.group_manager')),
+            ]"/>
+            
+        </record>
+
+        <!-- Super User -->
+        <record id="group_super_user" model="res.groups">
+            <field name="name">Super User</field>
+            <field name="implied_ids" eval="[
+            (4, ref('group_ar_mgr')),
+            (4, ref('group_ap_mgr')),
+            (4, ref('group_fin_mgr')),
+            (4, ref('group_incentive_mgr')),
+            (4, ref('group_acc_mgr')),
+            (4, ref('group_tax_spv')),
+            ]"/>
+        </record>
+
+        <record model="res.users.role" id="role_divisi_teknis_super_user">
+            <field name="name">Super User</field>
+            <field name="group_id" ref="asd_security_matrix.group_super_user"/>
+            <field name="implied_ids" eval="[
+            (4, ref('base.group_system')),
+            (4, ref('base.group_partner_manager')),
+            (4, ref('sales_team.group_sale_salesman_all_leads')),
+            (4, ref('asd_security_matrix.group_account_invoice_writeoff')),
+            (4, ref('asd_security_matrix.group_account_vendor_reserve')),
+            (4, ref('asd_security_matrix.group_sales_customers_menu')),
+            (4, ref('asd_security_matrix.group_sales_orders_menu')),
+            (4, ref('asd_security_matrix.group_sales_orders_orders_bed_bank_menu')),
+            (4, ref('asd_security_matrix.group_sales_sales_teams_menu')),
+            (4, ref('asd_security_matrix.group_sales_orders_to_invoice_menu')),
+            (4, ref('asd_security_matrix.group_sales_orders_to_upsell_menu')),
+            (4, ref('asd_security_matrix.group_sales_pricelists_menu')),
+            (4, ref('asd_security_matrix.group_sales_products_menu')),
+            (4, ref('asd_security_matrix.group_sales_product_variants_menu')),
+            (4, ref('asd_security_matrix.group_sales_reporting_credit_limit_count_list_menu')),
+            (4, ref('asd_security_matrix.group_sales_reporting_sales_menu')),
+            (4, ref('asd_security_matrix.group_sales_quotation_templates_menu')),
+            (4, ref('asd_security_matrix.group_sales_sales_teams_menu')),
+            (4, ref('asd_security_matrix.group_sales_settings_menu')),
+            (4, ref('asd_security_matrix.group_sales_attributes_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_units_of_measure_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_units_of_measure_categories_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_activity_types_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_account_classification_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_affiliate_mg_group_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_affiliate_types_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_agent_credibility_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_agent_system_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_agent_type_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_cashflow_description_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_connection_xml_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_contract_type_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_customer_group_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_ebs_payment_term_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_intercompany_cost_margin_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_occupancy_menu')),
+            (4, ref('asd_security_matrix.group_sales_configuration_partner_chain_menu')),
+            (4, ref('asd_security_matrix.group_inventory_master_data_packages_menu')),
+            (4, ref('asd_security_matrix.group_inventory_master_data_product_variants_menu')),
+            (4, ref('asd_security_matrix.group_inventory_master_data_products_menu')),
+            (4, ref('asd_security_matrix.group_inventory_master_data_reordering_rules_menu')),
+            (4, ref('asd_security_matrix.group_inventory_configuration_settings_menu')),
+            (4, ref('asd_security_matrix.group_inventory_configuration_locations_menu')),
+            (4, ref('asd_security_matrix.group_inventory_configuration_operations_types_menu')),
+            (4, ref('asd_security_matrix.group_inventory_configuration_putaway_rules_menu')),
+            (4, ref('asd_security_matrix.group_inventory_configuration_routes_menu')),
+            (4, ref('asd_security_matrix.group_inventory_configuration_rules_menu')),
+            (4, ref('asd_security_matrix.group_inventory_configuration_warehouses_menu')),
+            (4, ref('asd_security_matrix.group_inventory_configuration_attributes_menu')),
+            (4, ref('asd_security_matrix.group_inventory_configuration_barcode_nomenclatures_menu')),
+            (4, ref('asd_security_matrix.group_inventory_configuration_product_categories_menu')),
+            (4, ref('asd_security_matrix.group_inventory_configuration_product_packagings_menu')),
+            (4, ref('asd_security_matrix.group_inventory_configuration_uom_menu')),
+            (4, ref('asd_security_matrix.group_inventory_configuration_uom_categories_menu')),
+            (4, ref('asd_security_matrix.group_purchase_orders_vendors_menu')),
+            (4, ref('asd_security_matrix.group_purchase_products_product_variants_menu')),
+            (4, ref('asd_security_matrix.group_purchase_products_products_menu')),
+            (4, ref('asd_security_matrix.group_purchase_configuration_notification_settings_menu')),
+            (4, ref('asd_security_matrix.group_purchase_configuration_settings_menu')),
+            (4, ref('asd_security_matrix.group_purchase_configuration_supplier_contract_type_menu')),
+            (4, ref('asd_security_matrix.group_purchase_configuration_vendor_pricelists_menu')),
+            (4, ref('asd_security_matrix.group_purchase_configuration_product_categories_menu')),
+            (4, ref('asd_security_matrix.group_purchase_configuration_units_of_measure_menu')),
+            (4, ref('asd_security_matrix.group_purchase_configuration_units_of_measure_categories_menu')),
+            (4, ref('asd_security_matrix.group_accounting_customers_generate_ebs_menu')),
+            (4, ref('asd_security_matrix.group_customers_products_menu')),
+            (4, ref('asd_security_matrix.group_customers_receipts_menu')),
+            (4, ref('asd_security_matrix.group_vendor_receipts_menu')),
+            (4, ref('asd_security_matrix.group_accounting_lock_dates_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reconciliation_menu')),
+            (4, ref('asd_security_matrix.group_accounting_bank_and_cash_menu')),
+            (4, ref('asd_security_matrix.group_accounting_miscellaneous_menu')),
+            (4, ref('asd_security_matrix.group_accounting_purchases_menu')),
+            (4, ref('asd_security_matrix.group_accounting_sales_menu')),
+            (4, ref('asd_security_matrix.group_accounting_analytic_items_menu')),
+            (4, ref('asd_security_matrix.group_accounting_automatic_transfers_menu')),
+            (4, ref('asd_security_matrix.group_accounting_budgets_menu')),
+            (4, ref('asd_security_matrix.group_accounting_budgets_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_executive_summary_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_aged_receivable_menu')),
+            (4, ref('asd_security_matrix.group_accounting_reporting_partner_ledger_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_account_groups_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_account_tags_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_budgetary_positions_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_coa_payment_type_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_deposit_account_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_journal_groups_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_online_synchronization_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_product_categories_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_reconciliation_models_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_reporting_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_analytic_account_groups_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_analytic_accounts_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_analytic_tags_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_fiscal_positions_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_follow_up_levels_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_incoterms_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_journals_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_payment_terms_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_cash_roundings_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_financial_reports_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_tax_report_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_add_bank_account_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_bank_accounts_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_payment_acquirers_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_payment_icons_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_payment_transactions_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_saved_payment_data_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_agent_payment_type_menu')),
+            (4, ref('asd_security_matrix.group_accounting_configuration_settings_menu')),
+            (4, ref('asd_security_matrix.group_cash_advance_configuration_type_of_expense_menu')),
+            ]"/>
+        </record>
+    </data>
+</odoo>
+
+<!-- odoo-13.0.20221005\odoo\addons\sales_team\security\sales_team_security.xml -->

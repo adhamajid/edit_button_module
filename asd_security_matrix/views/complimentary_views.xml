@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="complimentary_security_form">
+            <field name="name">complimentary.security.form</field>
+            <field name="model">complimentary</field>
+            <field name="priority">999</field>
+            <field name="inherit_id" ref="dh_incentive.complimentary_form_view"/>
+            <field name="arch" type="xml">
+
+                <!-- inherit agar muncul ketika didebug agar file pyhton berjalan-->
+                <xpath expr="//notebook" position="inside">
+                    <page string="Button Access">
+                        <group name="access" string="Access" groups="base.group_no_one">
+                            <field name="has_reverse_complimentary"/>
+                            <field name="has_resettled_ar_complimentary"/>
+                            <field name="has_cancel_complimentary"/>
+                            <field name="has_refund_complimentary"/>
+                            <field name="has_set_to_draft_complimentary"/>
+                        </group>
+                    </page>
+                </xpath>
+
+                <!-- inherit default button register payment -->
+                <xpath expr="//button[@name='action_reverse']" position="attributes">
+                    <attribute name="groups" eval="False" />
+                    <attribute name="attrs">{'invisible': 
+                    [
+                        '|',
+                        '&amp;',
+                        '|',
+                        ('has_reverse_complimentary', '=', False),
+                        ('state', '!=', 'ar_settled'),
+                        ('is_future_booking', '=', True),
+                        ('state_future_booking', 'in', ['draft','cancel'])
+                    ]}</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='resettled_ar']" position="attributes">
+                    <attribute name="groups" eval="False" />
+                    <attribute name="states" eval="False"/>
+                    <attribute name="attrs">{'invisible': 
+                    [
+                        '|',
+                        '|',
+                        ('state','!=','vendor_bill'),
+                        ('check_reverse', '!=', 'no'),
+                        ('has_resettled_ar_complimentary', '=', False)
+                    ]}</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='cancel']" position="attributes">
+                    <attribute name="groups" eval="False" />
+                    <attribute name="attrs">{'invisible': 
+                    [
+                        '|',
+                        ('has_cancel_complimentary', '=', False),
+                        '&amp;',
+                        ('state', 'not in', ['draft','ar_settled']),
+                        '|',
+                        ('is_future_booking', '=', True),
+                        ('state_future_booking', 'in', ['draft','cancel'])
+                    ]}</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='refund']" position="attributes">
+                    <attribute name="groups" eval="False" />
+                    <attribute name="attrs">{'invisible': 
+                    [
+                        '|',
+                        '|',
+                        ('reverse_ids', '>', 1),
+                        ('state','!=','ar_settled'),
+                        ('has_refund_complimentary', '=', False)
+                    ]}</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='set_to_draft']" position="attributes">
+                    <attribute name="groups" eval="False" />
+                    <attribute name="states" eval="False"/>
+                    <attribute name="attrs">{'invisible': 
+                    [
+                        '|',
+                        ('state','!=','cancel'),
+                        ('has_set_to_draft_complimentary', '=', False)
+                    ]}</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

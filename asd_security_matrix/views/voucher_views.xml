@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="voucher_incentives_security_form">
+            <field name="name">voucher.incentive.security.form</field>
+            <field name="model">voucher.incentive</field>
+            <field name="priority">999</field>
+            <field name="inherit_id" ref="dh_incentive.voucher_incentives_form_view"/>
+            <field name="arch" type="xml">
+
+                <!-- inherit agar muncul ketika didebug agar file pyhton berjalan-->
+                <xpath expr="//form/sheet" position="inside">
+                    <notebook>
+                        <page string="Other Info">
+                            <group name="access" string="Access" groups="base.group_no_one">
+                                <field name="has_incentives_voucher_button_use"/>
+                                <field name="has_incentives_voucher_button_writeoff"/>
+                                <field name="has_incentives_voucher_button_reverse"/>
+                            </group>
+                        </page>
+                    </notebook>
+                    
+                </xpath>
+
+                <!-- inherit default button register payment -->
+                <xpath expr="//button[@name='use']" position="attributes">
+                    <attribute name="groups" eval="False" />
+                    <attribute name="attrs">{'invisible': 
+                    [
+                        '|',
+                        ('state', 'not in', ['receipt','expiring_soon']),
+                        ('has_incentives_voucher_button_use', '=', False)
+                    ]}</attribute>
+                </xpath>
+                
+                <xpath expr="//button[@name='action_writeoff']" position="attributes">
+                    <attribute name="groups" eval="False" />
+                    <attribute name="attrs">{'invisible': 
+                    [
+                        '|',
+                        ('state', 'not in', ['receipt','expiring_soon']),
+                        ('has_incentives_voucher_button_writeoff', '=', False)
+                    ]}</attribute>
+                </xpath>
+                
+                <xpath expr="//button[@name='action_reverse']" position="attributes">
+                    <attribute name="groups" eval="False" />
+                    <attribute name="states" eval="False" />
+                    <attribute name="attrs">{'invisible': 
+                    [
+                        '|',
+                        ('state', 'not in', ['used','settled']),
+                        ('has_incentives_voucher_button_reverse', '=', False)
+                    ]}</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

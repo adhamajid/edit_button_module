@@ -1,0 +1,1167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Button Reset To Draft -->
+        <record id="group_account_invoice_reset_draft" model="res.groups">
+            <field name="name">Accounting Invoice Reset Draft</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_account_bills_reset_draft" model="res.groups">
+            <field name="name">Accounting Bills Reset Draft</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        
+        <!-- Button WriteOff Accounting -->
+        <record id="group_account_invoice_writeoff" model="res.groups">
+            <field name="name">Accounting Invoice Write Off</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        
+        <!-- Button Reserve Accounting -->
+        <record id="group_account_vendor_reserve" model="res.groups">
+            <field name="name">Accounting Vendors Payment Reverse</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        
+        <!-- Button Edit Accounting -->
+        <record id="group_account_edit_button" model="res.groups">
+            <field name="name">Accounting Edit Button</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        
+
+        <!-- Button Register Payments Accounting -->
+        <record id="group_invoice_register_payment" model="res.groups">
+            <field name="name">Accounting Invoice Register Payment</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_bills_register_payment" model="res.groups">
+            <field name="name">Accounting Bills Register Payment</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_refund_register_payment" model="res.groups">
+            <field name="name">Accounting Refund Register Payment</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_credit_notes_register_payment" model="res.groups">
+            <field name="name">Accounting Credit Notes Register Payment</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Button Register Payments Cash Advance -->
+        <record id="group_cashadv_register_payment" model="res.groups">
+            <field name="name">Cash Advance Pre Approval Register Payment</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_cashadv_settlement_payment_n_return" model="res.groups">
+            <field name="name">Cash Advance Settlement Register Payment n Return Advance</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Button Use&Write Off in Incentives Voucher-->
+        <record id="group_incentives_voucher_button_use" model="res.groups">
+            <field name="name">Incentives Voucher Button Use</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        
+        <record id="group_incentives_voucher_button_writeoff" model="res.groups">
+            <field name="name">Incentives Voucher Button Write Off</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        
+        <record id="group_incentives_voucher_button_reverse" model="res.groups">
+            <field name="name">Incentives Voucher Button Reverse</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Button in Incentives Complimentary-->
+
+        <record id="group_incentives_complimentary_button_reverse" model="res.groups">
+            <field name="name">Incentives Complimentary Button Reverse</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_incentives_complimentary_button_resettled_ar" model="res.groups">
+            <field name="name">Incentives Complimentary Button Resettled Ar</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_incentives_complimentary_button_cancel" model="res.groups">
+            <field name="name">Incentives Complimentary Button Cancel</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_incentives_complimentary_button_refund" model="res.groups">
+            <field name="name">Incentives Complimentary Button Refund</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_incentives_complimentary_button_set_to_draft" model="res.groups">
+            <field name="name">Incentives Complimentary Button Set To Draft</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Accounting > Overview -->
+        <record id="group_accounting_overview_menu" model="res.groups">
+            <field name="name">Accounting Overview Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Accounting->Vendors in Groups  -->
+        <record id="group_vendor_bill_menu" model="res.groups">
+            <field name="name">Accounting Vendor Bill Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_vendor_payments_menu" model="res.groups">
+            <field name="name">Accounting Vendor Payments Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        
+        <record id="group_vendor_products_menu" model="res.groups">
+            <field name="name">Accounting Vendor Products Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_vendor_receipts_menu" model="res.groups">
+            <field name="name">Accounting Vendor Receipts Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        
+        <record id="group_vendor_refund_menu" model="res.groups">
+            <field name="name">Accounting Vendor Refund Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_vendor_vendor_menu" model="res.groups">
+            <field name="name">Accounting Vendor Vendor Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Accounting->Vendors custom MG in Groups  -->
+
+        <record id="group_accounting_vendors_bills_bed_bank_menu" model="res.groups">
+            <field name="name">Accounting Vendors Bills Bed Bank Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_vendors_bills_incentive_menu" model="res.groups">
+            <field name="name">Accounting Vendors Bills Incentive Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_vendors_match_vendor_bill_menu" model="res.groups">
+            <field name="name">Accounting Vendors Match Vendor Bill Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_vendors_vendor_payment_menu" model="res.groups">
+            <field name="name">Accounting Vendors Vendor Payment Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Accounting->Customers in Groups  -->
+        <record id="group_customers_credit_notes_menu" model="res.groups">
+            <field name="name">Accounting Customers Credit Notes Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_customers_customers_menu" model="res.groups">
+            <field name="name">Accounting Customers Customers Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_customers_follow_report_menu" model="res.groups">
+            <field name="name">Accounting Customers Follow-up Report Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_customers_invoices_menu" model="res.groups">
+            <field name="name">Accounting Customers Invoices Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_customers_payments_menu" model="res.groups">
+            <field name="name">Accounting Customers Payments Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_customers_products_menu" model="res.groups">
+            <field name="name">Accounting Customers Products Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_customers_receipts_menu" model="res.groups">
+            <field name="name">Accounting Customers Receipts Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Accounting->Customers custom MG in Groups  -->
+        <record id="group_accounting_customers_credit_notes_bed_bank_menu" model="res.groups">
+            <field name="name">Accounting Customers Credit Notes Bed Bank Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_customers_customer_payment_menu" model="res.groups">
+            <field name="name">Accounting Customers Customer Payment Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_customers_generate_ebs_menu" model="res.groups">
+            <field name="name">Accounting Customers Generate EBS Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_customers_generate_incentives_menu" model="res.groups">
+            <field name="name">Accounting Customers Generate Incentives Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_customers_invoices_bed_bank_menu" model="res.groups">
+            <field name="name">Accounting Customers Invoices Bed Bank Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_customers_invoices_incentive_menu" model="res.groups">
+            <field name="name">Accounting Customers Invoices Incentive Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_customers_dit_payment_gateway_menu" model="res.groups">
+            <field name="name">Accounting Customers DIT Payment Gateway Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+
+        <!-- Access Hidden Menus Sales->Orders in Groups -->
+        <record id="group_sales_customers_menu" model="res.groups">
+            <field name="name">Sales Orders Customers Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_orders_menu" model="res.groups">
+            <field name="name">Sales Orders Orders Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_orders_orders_bed_bank_menu" model="res.groups">
+            <field name="name">Sales Orders Orders Bed Bank Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_quotations_menu" model="res.groups">
+            <field name="name">Sales Orders Quotations Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_sales_teams_menu" model="res.groups">
+            <field name="name">Sales Orders Sales Teams Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+
+        <!-- Access Hidden Menus Sales->To Invoice in Groups -->
+        <record id="group_sales_orders_to_invoice_menu" model="res.groups">
+            <field name="name">Sales To Invoice Orders to Invoice Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_orders_to_upsell_menu" model="res.groups">
+            <field name="name">Sales To Invoice Orders to Upsell Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Sales->Products in Groups -->
+        <record id="group_sales_pricelists_menu" model="res.groups">
+            <field name="name">Sales Products Pricelists Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_products_menu" model="res.groups">
+            <field name="name">Sales Products Products Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_product_variants_menu" model="res.groups">
+            <field name="name">Sales Products Product Variants Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Sales->Reporting in Groups -->
+        <record id="group_sales_reporting_credit_limit_count_list_menu" model="res.groups">
+            <field name="name">Sales Reporting Credit Limit Count List Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_reporting_sales_menu" model="res.groups">
+            <field name="name">Sales Reporting Sales Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Sales->Configuration in Groups -->
+        <record id="group_sales_quotation_templates_menu" model="res.groups">
+            <field name="name">Sales Configuration Quotation Templates Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_sales_teams_menu" model="res.groups">
+            <field name="name">Sales Configuration Sales Teams Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_settings_menu" model="res.groups">
+            <field name="name">Sales Configuration Settings Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_attributes_menu" model="res.groups">
+            <field name="name">Sales Configuration Attributes Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_units_of_measure_menu" model="res.groups">
+            <field name="name">Sales Configuration Units of Measure Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_units_of_measure_categories_menu" model="res.groups">
+            <field name="name">Sales Configuration Units of Measure Categories Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_activity_types_menu" model="res.groups">
+            <field name="name">Sales Configuration Activity Types Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_account_classification_menu" model="res.groups">
+            <field name="name">Sales Configuration Account Classification Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_affiliate_mg_group_menu" model="res.groups">
+            <field name="name">Sales Configuration Affiliate / MG Group Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_affiliate_types_menu" model="res.groups">
+            <field name="name">Sales Configuration Affiliate Types Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_agent_credibility_menu" model="res.groups">
+            <field name="name">Sales Configuration Agent Credibility Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_agent_system_menu" model="res.groups">
+            <field name="name">Sales Configuration Agent System Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_agent_type_menu" model="res.groups">
+            <field name="name">Sales Configuration Agent Type Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_cashflow_description_menu" model="res.groups">
+            <field name="name">Sales Configuration Cashflow Description Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_connection_xml_menu" model="res.groups">
+            <field name="name">Sales Configuration Connection XML or non XML Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_contract_type_menu" model="res.groups">
+            <field name="name">Sales Configuration Contract Type Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_customer_group_menu" model="res.groups">
+            <field name="name">Sales Configuration Customer Group Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_ebs_payment_term_menu" model="res.groups">
+            <field name="name">Sales Configuration EBS Payment Term Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_intercompany_cost_margin_menu" model="res.groups">
+            <field name="name">Sales Configuration Intercompany Cost Margin Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_occupancy_menu" model="res.groups">
+            <field name="name">Sales Configuration Occupancy Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_sales_configuration_partner_chain_menu" model="res.groups">
+            <field name="name">Sales Configuration Partner Chain Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+
+        <!-- Access Hidden Menus Inventory->Operations in Groups -->
+        <record id="group_inventory_operations_adjustments_menu" model="res.groups">
+            <field name="name">Inventory Operations Adjustments Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_inventory_operations_run_scheduler_menu" model="res.groups">
+            <field name="name">Inventory Operations Run Scheduler Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_inventory_operations_scrap_menu" model="res.groups">
+            <field name="name">Inventory Operations Scrap Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_inventory_operations_transfers_menu" model="res.groups">
+            <field name="name">Inventory Operations Transfers Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Inventory->Master Data in Groups -->
+        <record id="group_inventory_master_data_lots_serial_numbers_menu" model="res.groups">
+            <field name="name">Inventory Master Data Lots/Serial Numbers Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_inventory_master_data_packages_menu" model="res.groups">
+            <field name="name">Inventory Master Data Packages Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_inventory_master_data_product_variants_menu" model="res.groups">
+            <field name="name">Inventory Master Data Product Variants Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_inventory_master_data_products_menu" model="res.groups">
+            <field name="name">Inventory Master Data Products Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_inventory_master_data_reordering_rules_menu" model="res.groups">
+            <field name="name">Inventory Master Data Reordering Rules Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Inventory->Reporting in Groups -->
+        <record id="group_inventory_reporting_forecasted_inventory_menu" model="res.groups">
+            <field name="name">Inventory Reporting Forecasted Inventory Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_inventory_reporting_inventory_report_menu" model="res.groups">
+            <field name="name">Inventory Reporting Inventory Report Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_inventory_reporting_inventory_valuation_menu" model="res.groups">
+            <field name="name">Inventory Reporting Inventory Valuation Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_inventory_reporting_product_moves_menu" model="res.groups">
+            <field name="name">Inventory Reporting Product Moves Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_inventory_reporting_stock_moves_menu" model="res.groups">
+            <field name="name">Inventory Reporting Stock Moves Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_inventory_reporting_warehouse_analysis_menu" model="res.groups">
+            <field name="name">Inventory Reporting Warehouse Analysis Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Inventory->Configuration in Groups -->
+        <record id="group_inventory_configuration_settings_menu" model="res.groups">
+            <field name="name">Inventory Configuration Settings Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        
+        <record id="group_inventory_configuration_locations_menu" model="res.groups">
+            <field name="name">Inventory Configuration Locations Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_inventory_configuration_operations_types_menu" model="res.groups">
+            <field name="name">Inventory Configuration Operations Types Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_inventory_configuration_putaway_rules_menu" model="res.groups">
+            <field name="name">Inventory Configuration Putaway Rules Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_inventory_configuration_routes_menu" model="res.groups">
+            <field name="name">Inventory Configuration Routes Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_inventory_configuration_rules_menu" model="res.groups">
+            <field name="name">Inventory Configuration Rules Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_inventory_configuration_warehouses_menu" model="res.groups">
+            <field name="name">Inventory Configuration Warehouses Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_inventory_configuration_attributes_menu" model="res.groups">
+            <field name="name">Inventory Configuration Attributes Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_inventory_configuration_barcode_nomenclatures_menu" model="res.groups">
+            <field name="name">Inventory Configuration Barcode Nomenclatures Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_inventory_configuration_product_categories_menu" model="res.groups">
+            <field name="name">Inventory Configuration Product Categories Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_inventory_configuration_product_packagings_menu" model="res.groups">
+            <field name="name">Inventory Configuration Product Packagings Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_inventory_configuration_uom_menu" model="res.groups">
+            <field name="name">Inventory Configuration UoM Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_inventory_configuration_uom_categories_menu" model="res.groups">
+            <field name="name">Inventory Configuration UoM Categories Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+
+        <!-- Access Hidden Menus Purchase->Orders in Groups -->
+        <record id="group_purchase_purchase_order_detail_menu" model="res.groups">
+            <field name="name">Purchase Orders Purchase Order Detail Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_purchase_purchase_orders_menu" model="res.groups">
+            <field name="name">Purchase Orders Purchase Orders Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_purchase_requests_for_quotation_menu" model="res.groups">
+            <field name="name">Purchase Orders Requests for Quotation Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_purchase_orders_vendors_menu" model="res.groups">
+            <field name="name">Purchase Orders Vendors Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>  
+
+        <!-- Access Hidden Menus Purchase->Products in Groups -->
+        <record id="group_purchase_products_product_variants_menu" model="res.groups">
+            <field name="name">Purchase Products Product Variants Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_purchase_products_products_menu" model="res.groups">
+            <field name="name">Purchase Products Products Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Purchase->Reporting in Groups -->
+        <record id="group_purchase_reporting_menu" model="res.groups">
+            <field name="name">Purchase Reporting Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Purchase->Configuration in Groups -->
+        <record id="group_purchase_configuration_notification_settings_menu" model="res.groups">
+            <field name="name">Purchase Configuration Notification Settings Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_purchase_configuration_settings_menu" model="res.groups">
+            <field name="name">Purchase Configuration Settings Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_purchase_configuration_supplier_contract_type_menu" model="res.groups">
+            <field name="name">Purchase Configuration Supplier Contract Type Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_purchase_configuration_vendor_pricelists_menu" model="res.groups">
+            <field name="name">Purchase Configuration Vendor Pricelists Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_purchase_configuration_product_categories_menu" model="res.groups">
+            <field name="name">Purchase Configuration Product Categories Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_purchase_configuration_units_of_measure_menu" model="res.groups">
+            <field name="name">Purchase Configuration Units of Measure Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_purchase_configuration_units_of_measure_categories_menu" model="res.groups">
+            <field name="name">Purchase Configuration Units of Measure Categories Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+
+        <!-- Access Hidden Menus Cash Flow->Cashflow in Groups -->
+        <record id="group_cashflow_activities_menu" model="res.groups">
+            <field name="name">Cash Flow Cashflow Activities Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_cashflow_bank_cash_equivalent_menu" model="res.groups">
+            <field name="name">Cash Flow Cashflow Bank and Cash Equivalent Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_cashflow_code_menu" model="res.groups">
+            <field name="name">Cash Flow Cashflow Code Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_cashflow_movement_menu" model="res.groups">
+            <field name="name">Cash Flow Cashflow Movement Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Cash Flow->Reporting in Groups -->
+        <record id="group_cashflow_reporting_statement_menu" model="res.groups">
+            <field name="name">Cash Flow Reporting Statement Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+
+        <!-- Access Hidden Menus Incentives->Incentives in Groups -->
+        <record id="group_incentives_incentives_menu" model="res.groups">
+            <field name="name">Incentives Incentives Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Incentives->Voucher in Groups -->
+        <record id="group_incentives_voucher_menu" model="res.groups">
+            <field name="name">Incentives Voucher Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Incentives->Settlement in Groups -->
+        <record id="group_incentives_settlement_deposit_menu" model="res.groups">
+            <field name="name">Incentives Settled With Deposit Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_incentives_settlement_voucher_menu" model="res.groups">
+            <field name="name">Incentives Settled With Voucher Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Incentives->Complimentary in Groups -->
+        <record id="group_incentives_complimentary_menu" model="res.groups">
+            <field name="name">Incentives Complimentary Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Incentives->Incentive Schema Logs in Groups -->
+        <record id="group_incentives_schema_logs_menu" model="res.groups">
+            <field name="name">Incentives Schema Logs Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Incentives->Cek Incentive in Groups -->
+        <record id="group_incentives_cek_schema_draft_menu" model="res.groups">
+            <field name="name">Incentives Cek Incentive Schema Draft Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+    
+    <!-- Access Hidden Menus Cash Advance->Pre Approval in Groups -->
+        <record id="group_cash_advance_pre_approval_other_menu" model="res.groups">
+            <field name="name">Cash Advance Pre Approval Other Approval Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_cash_advance_pre_approval_travel_menu" model="res.groups">
+            <field name="name">Cash Advance Pre Approval Travel Approval Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Cash Advance->Cash Settlement in Groups -->
+        <record id="group_cash_advance_cash_settlement_other_menu" model="res.groups">
+            <field name="name">Cash Advance Cash Settlement Other Settlement Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_cash_advance_cash_settlement_travel_menu" model="res.groups">
+            <field name="name">Cash Advance Cash Settlement Travel Settlement Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Cash Advance->Configuration in Groups -->
+        <record id="group_cash_advance_configuration_type_of_expense_menu" model="res.groups">
+            <field name="name">Cash Advance Configuration Type of Expense Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+
+        <!-- Access Hidden Menus Tax Management->Generate VAT Out in Groups -->
+        <record id="group_tax_management_generate_vat_out_menu" model="res.groups">
+            <field name="name">Tax Management Generate VAT Out Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Tax Management->Calculate Net Off in Groups -->
+        <record id="group_tax_management_calculate_net_off_menu" model="res.groups">
+            <field name="name">Tax Management Calculate Net Off Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Access Hidden Menus Tax Management->COA Configuration in Groups -->
+        <record id="group_tax_management_coa_configuration_menu" model="res.groups">
+            <field name="name">Tax Management COA Configuration Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+
+
+
+
+        <!-- Access Hidden Menus Accounting->Accounting in Groups -->
+        <record id="group_accounting_lock_dates_menu" model="res.groups">
+            <field name="name">Accounting Lock Dates Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reconciliation_menu" model="res.groups">
+            <field name="name">Accounting Reconciliation Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_tax_adjustments_menu" model="res.groups">
+            <field name="name">Accounting Tax Adjustments Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_currency_revaluation_menu" model="res.groups">
+            <field name="name">Accounting Currency Revaluation Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_generate_bad_debt_entries_menu" model="res.groups">
+            <field name="name">Accounting Generate Bad Debt Entries Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_bank_and_cash_menu" model="res.groups">
+            <field name="name">Accounting Bank and Cash Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_miscellaneous_menu" model="res.groups">
+            <field name="name">Accounting Miscellaneous Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_purchases_menu" model="res.groups">
+            <field name="name">Accounting Purchases Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_sales_menu" model="res.groups">
+            <field name="name">Accounting Sales Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_accounting_general_ledger_menu" model="res.groups">
+            <field name="name">Accounting Accounting General Ledger Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_accounting_partner_ledger_menu" model="res.groups"> 
+            <field name="name">Accounting Accounting Partner Ledger Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_analytic_items_menu" model="res.groups">
+            <field name="name">Accounting Analytic Items Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_assets_menu" model="res.groups">
+            <field name="name">Accounting Assets Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_automatic_transfers_menu" model="res.groups">
+            <field name="name">Accounting Automatic Transfers Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_budgets_menu" model="res.groups">
+            <field name="name">Accounting Budgets Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_deferred_expenses_menu" model="res.groups">
+            <field name="name">Accounting Deferred Expenses Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_deferred_revenues_menu" model="res.groups">
+            <field name="name">Accounting Deferred Revenues Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_journal_entries_menu" model="res.groups">
+            <field name="name">Accounting Journal Entries Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_journal_items_menu" model="res.groups">
+            <field name="name">Accounting Journal Items Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_import_payment_menu" model="res.groups">
+            <field name="name">Accounting Import Payment Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!-- Accounting->EFaktur -->
+        <record id="group_accounting_vat_export_efaktur_menu" model="res.groups">
+            <field name="name">Accounting VAT Export EFaktur Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_generate_tax_invoice_serial_number_menu" model="res.groups">
+            <field name="name">Accounting Generate Tax Invoice Serial Number Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_vat_import_efaktur_menu" model="res.groups">
+            <field name="name">Accounting VAT Import EFaktur Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_vat_in_efaktur_imported_menu" model="res.groups">
+            <field name="name">Accounting VAT IN EFaktur Imported Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+    <!-- Additional Groups for Reporting and Configuration omitted for brevity -->
+
+        <!-- Access Hidden Menus Accounting->Reporting in Groups -->
+        <record id="group_accounting_reporting_consolidated_journals_menu" model="res.groups">
+            <field name="name">Accounting Reporting Consolidated Journals Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_general_ledger_menu" model="res.groups">
+            <field name="name">Accounting Reporting General Ledger Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_journals_audit_menu" model="res.groups">
+            <field name="name">Accounting Reporting Journals Audit Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_tax_report_menu" model="res.groups">
+            <field name="name">Accounting Reporting Tax Report Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_trial_balance_menu" model="res.groups">
+            <field name="name">Accounting Reporting Trial Balance Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_currency_revaluation_report_menu" model="res.groups">
+            <field name="name">Accounting Reporting Currency Revaluation Report Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_balance_sheet_menu" model="res.groups">
+            <field name="name">Accounting Reporting Balance Sheet Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_cash_flow_statement_menu" model="res.groups">
+            <field name="name">Accounting Reporting Cash Flow Statement Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_executive_summary_menu" model="res.groups">
+            <field name="name">Accounting Reporting Executive Summary Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_profit_and_loss_menu" model="res.groups">
+            <field name="name">Accounting Reporting Profit and Loss Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_analytic_report_menu" model="res.groups">
+            <field name="name">Accounting Reporting Analytic Report Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_assets_report_menu" model="res.groups">
+            <field name="name">Accounting Reporting Assets Report Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_budgets_analysis_menu" model="res.groups">
+            <field name="name">Accounting Reporting Budgets Analysis Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_dsr_report_menu" model="res.groups">
+            <field name="name">Accounting Reporting DSR Report Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_invoices_menu" model="res.groups">
+            <field name="name">Accounting Reporting Invoices Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_invoices_analysis_menu" model="res.groups">
+            <field name="name">Accounting Reporting Invoices Analysis Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_summary_ar_by_bad_debt_report_menu" model="res.groups">
+            <field name="name">Accounting Reporting Summary AR By Bad Debt Report Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_aged_payable_menu" model="res.groups">
+            <field name="name">Accounting Reporting Aged Payable Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_aged_receivable_menu" model="res.groups">
+            <field name="name">Accounting Reporting Aged Receivable Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_aged_report_xlsx_menu" model="res.groups">
+            <field name="name">Accounting Reporting Aged Report XLSX Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        
+        <record id="group_accounting_reporting_partner_ledger_menu" model="res.groups">
+            <field name="name">Accounting Reporting Partner Ledger Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_aging_ap_menu" model="res.groups">
+            <field name="name">Accounting Reporting Aging AP Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_aging_ap_clearing_menu" model="res.groups">
+            <field name="name">Accounting Reporting Aging AP Clearing Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_credit_limit_jarvis_vs_odoo_menu" model="res.groups">
+            <field name="name">Accounting Reporting Credit Limit Jarvis vs Odoo Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_deposit_to_supplier_menu" model="res.groups">
+            <field name="name">Accounting Reporting Deposit to Supplier Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_dpo_report_menu" model="res.groups">
+            <field name="name">Accounting Reporting DPO Report Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_reporting_export_journal_items_menu" model="res.groups">
+            <field name="name">Accounting Reporting Export Journal Items Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        
+        <record id="group_accounting_reporting_incentive_report_menu" model="res.groups">
+            <field name="name">Accounting Reporting Incentive Report Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+
+        <!-- Access Hidden Menus Accounting->Configuration in Groups -->
+        <record id="group_accounting_configuration_account_groups_menu" model="res.groups">
+            <field name="name">Accounting Configuration Account Groups Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_configuration_account_tags_menu" model="res.groups">
+            <field name="name">Accounting Configuration Account Tags Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_configuration_asset_models_menu" model="res.groups">
+            <field name="name">Accounting Configuration Asset Models Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_configuration_bad_debt_configuration_menu" model="res.groups">
+            <field name="name">Accounting Configuration Bad Debt Configuration Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_configuration_budgetary_positions_menu" model="res.groups">
+            <field name="name">Accounting Configuration Budgetary Positions Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_configuration_chart_of_accounts_menu" model="res.groups">
+            <field name="name">Accounting Configuration Chart of Accounts Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_configuration_coa_payment_type_menu" model="res.groups">
+            <field name="name">Accounting Configuration COA Payment Type Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+
+        <record id="group_accounting_configuration_currencies_menu" model="res.groups">
+            <field name="name">Accounting Configuration Currencies Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_configuration_deferred_expense_models_menu" model="res.groups">
+            <field name="name">Accounting Configuration Deferred Expense Models Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_configuration_deferred_revenue_models_menu" model="res.groups">
+            <field name="name">Accounting Configuration Deferred Revenue Models Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_configuration_deposit_account_menu" model="res.groups">
+            <field name="name">Accounting Configuration Deposit Account Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        
+        <record id="group_accounting_configuration_fiscal_years_menu" model="res.groups">
+            <field name="name">Accounting Configuration Fiscal Years Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_journal_groups_menu" model="res.groups">
+            <field name="name">Accounting Configuration Journal Groups Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_online_synchronization_menu" model="res.groups">
+            <field name="name">Accounting Configuration Online Synchronization Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_product_categories_menu" model="res.groups">
+            <field name="name">Accounting Configuration Product Categories Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_reconciliation_models_menu" model="res.groups">
+            <field name="name">Accounting Configuration Reconciliation Models Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_reporting_menu" model="res.groups">
+            <field name="name">Accounting Configuration Reporting Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_analytic_account_groups_menu" model="res.groups">
+            <field name="name">Accounting Configuration Analytic Account Groups Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_analytic_accounts_menu" model="res.groups">
+            <field name="name">Accounting Configuration Analytic Accounts Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_analytic_tags_menu" model="res.groups">
+            <field name="name">Accounting Configuration Analytic Tags Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_tax_invoice_serial_number_menu" model="res.groups">
+            <field name="name">Accounting Configuration Tax Invoice Serial Number Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_fiscal_positions_menu" model="res.groups">
+            <field name="name">Accounting Configuration Fiscal Positions Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_follow_up_levels_menu" model="res.groups">
+            <field name="name">Accounting Configuration Follow-up Levels Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_incoterms_menu" model="res.groups">
+            <field name="name">Accounting Configuration Incoterms Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_journals_menu" model="res.groups">
+            <field name="name">Accounting Configuration Journals Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_payment_terms_menu" model="res.groups">
+            <field name="name">Accounting Configuration Payment Terms Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_taxes_menu" model="res.groups">
+            <field name="name">Accounting Configuration Taxes Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_cash_roundings_menu" model="res.groups">
+            <field name="name">Accounting Configuration Cash Roundings Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_financial_reports_menu" model="res.groups">
+            <field name="name">Accounting Configuration Financial Reports Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_accounting_configuration_tax_report_menu" model="res.groups">
+            <field name="name">Accounting Configuration Tax Report Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_add_bank_account_menu" model="res.groups">
+            <field name="name">Accounting Configuration Add Bank Account Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_bank_accounts_menu" model="res.groups">
+            <field name="name">Accounting Configuration Bank Accounts Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_payment_acquirers_menu" model="res.groups">
+            <field name="name">Accounting Configuration Payment Acquirers Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_payment_icons_menu" model="res.groups">
+            <field name="name">Accounting Configuration Payment Icons Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_payment_transactions_menu" model="res.groups">
+            <field name="name">Accounting Configuration Payment Transactions Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_saved_payment_data_menu" model="res.groups">
+            <field name="name">Accounting Configuration Saved Payment Data Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_agent_payment_type_menu" model="res.groups">
+            <field name="name">Accounting Configuration Agent Payment Type Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="group_accounting_configuration_settings_menu" model="res.groups">
+            <field name="name">Accounting Configuration Settings Menu</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+    </data>
+
+</odoo>   
+    

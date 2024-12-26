@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_move_security_form">
+            <field name="name">account.move.security.form</field>
+            <field name="model">account.move</field>
+            <field name="priority">999</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+
+            <xpath expr="//form/header" position="inside">
+                <field name="edit_hide_css" nolabel="1"/>
+                <field name="lock_order_line_css" nolabel="1"/>
+            </xpath>
+
+                <!-- inherit agar muncul ketika didebug agar file pyhton berjalan-->
+                <xpath expr="//page[@name='other_info']" position="inside">
+                    <group name="access" string="Access" groups="base.group_no_one">
+                        <field name="has_reset_draft"/>
+                        <field name="has_register_payment"/>
+                        <field name="has_write_off_acc"/>
+                        
+                    </group>
+                </xpath>
+
+                <!-- inherit default button draft -->
+                <xpath expr="//button[@name='button_draft']" position="attributes">
+                    <attribute name="groups" eval="False" />
+                    <attribute name="attrs">{'invisible' : [
+                        '|', 
+                        ('restrict_mode_hash_table', '=', True),
+                        '|', 
+                        ('state', 'not in', ('posted', 'cancel')),
+                        ('has_reset_draft', '=', False)
+                    ]}</attribute>
+                </xpath>
+
+                <!-- inherit default button register payment -->
+                <xpath expr="//button[@name='action_invoice_register_payment']" position="attributes">
+                    <attribute name="groups" eval="False" />
+                    <attribute name="attrs">{'invisible': [
+                        '|',
+                        '|', 
+                        '|', 
+                        '|',
+                        ('state', '!=', 'posted'), 
+                        ('invoice_payment_state', '!=', 'not_paid'), 
+                        (
+                            'type', 'not in', (
+                                'out_invoice',
+                                'out_refund',
+                                'in_invoice',
+                                'in_refund',
+                                'out_receipt',
+                                'in_receipt'
+                            )
+                        ),
+                        ('authorized_transaction_ids', '!=', []),
+                        ('has_register_payment', '=', False)
+                    ]}</attribute>
+                </xpath>
+
+                <!-- inherit default button writeoff Invoices Incentive -->
+                <xpath expr="//button[@name='button_writeoff']" position="attributes">
+                    <attribute name="groups" eval="False" />
+                    <attribute name="attrs">{'invisible': [
+                        '|', 
+                        '|', 
+                        ('invoice_payment_state', '!=', 'not_paid'), 
+                        ('state', '!=','posted'),
+                        ('has_write_off_acc', '=', False)
+                    ]}</attribute>
+                </xpath>
+                
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

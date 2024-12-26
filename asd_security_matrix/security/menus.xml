@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Accounting > Overview -->
+    <record model="ir.ui.menu" id="account.menu_board_journal_1">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_overview_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Accounting->Vendors in Groups  -->
+    <record model="ir.ui.menu" id="account.menu_action_move_in_invoice_type">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_vendor_bill_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_payments_payable">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_vendor_payments_menu'))]"/>
+        
+    </record>
+    
+    <record model="ir.ui.menu" id="account.product_product_menu_purchasable">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_vendor_products_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_move_in_receipt_type">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_vendor_receipts_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_move_in_refund_type">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_vendor_refund_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_account_supplier">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_vendor_vendor_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_accounting.menu_action_move_in_invoice_type_bed_bank">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_vendors_bills_bed_bank_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_incentive.menu_action_move_in_invoice_type_incentive">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_vendors_bills_incentive_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_accounting.match_vb_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_vendors_match_vendor_bill_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_payment.vendor_payment_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_vendors_vendor_payment_menu'))]"/>
+        
+    </record>
+
+
+    <!-- Access Hidden Menus Accounting->Customers in Groups  -->
+    <record model="ir.ui.menu" id="account.menu_action_move_out_refund_type">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_customers_credit_notes_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_account_customer">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_customers_customers_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_followup.customer_statements_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_customers_follow_report_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_move_out_invoice_type">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_customers_invoices_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_payments_receivable">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_customers_payments_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.product_product_menu_sellable">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_customers_products_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_move_out_receipt_type">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_customers_receipts_menu'))]"/>
+        
+    </record>
+    
+    <record model="ir.ui.menu" id="dh_accounting.menu_action_move_out_refund_type_bed_bank">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_customers_credit_notes_bed_bank_menu'))]"/>
+        
+    </record>
+    
+    <record model="ir.ui.menu" id="dh_payment.customer_payment_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_customers_customer_payment_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_ebs.menu_action_generate_ebs">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_customers_generate_ebs_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_incentive.menu_generate_incentives">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_customers_generate_incentives_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_accounting.menu_action_move_out_invoice_type_bed_bank">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_customers_invoices_bed_bank_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_incentive.menu_action_move_out_invoice_type_incentive">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_customers_invoices_incentive_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="asd_deposit_in_transit.menu_finance_receivables_deposit_in_transit">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_customers_dit_payment_gateway_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Sales->Order in Groups  -->
+
+    <record model="ir.ui.menu" id="sale.res_partner_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_customers_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sale.menu_sale_order">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_orders_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_sale_order.menu_sale_order_bed_bank">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_orders_orders_bed_bank_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sale.menu_sale_quotations">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_quotations_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sale.report_sales_team">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_sales_teams_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Sales->To Invoice in Groups  -->
+
+    <record model="ir.ui.menu" id="sale.menu_sale_order_invoice">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_orders_to_invoice_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sale.menu_sale_order_upselling">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_orders_to_upsell_menu'))]"/>
+        
+    </record>
+
+
+    <!-- Access Hidden Menus Sales->Products in Groups -->
+
+    <record model="ir.ui.menu" id="sale.menu_product_pricelist_main">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_pricelists_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sale.menu_product_template_action">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_products_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sale.menu_products">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_product_variants_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Sales->Reporting in Groups -->
+
+    <record model="ir.ui.menu" id="sul_credit_limit.menu_credit_limit_count">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_reporting_credit_limit_count_list_menu'))]"/>
+        
+    </record>
+    <record model="ir.ui.menu" id="sale.menu_report_product_all">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_reporting_sales_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Sales->Configuration in Groups -->
+
+    <record model="ir.ui.menu" id="sale_management.sale_order_template_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_quotation_templates_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sale.sales_team_config">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_sales_teams_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sale.menu_sale_general_settings">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_settings_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sale_management.menu_product_attribute_action">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_attributes_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sale.menu_product_uom_form_action">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_units_of_measure_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sale.menu_product_uom_categ_form_action">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_units_of_measure_categories_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sale.sale_menu_config_activity_type">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_activity_types_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_customer.account_classification_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_account_classification_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_customer.affiliate_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_affiliate_mg_group_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_customer.type_affiliate_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_affiliate_types_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_customer.agent_credibility_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_agent_credibility_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_customer.agent_system_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_agent_system_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_customer.agent_type_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_agent_type_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_customer.cashflow_desc_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_cashflow_description_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_customer.connection_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_connection_xml_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_sale_order.contract_type_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_contract_type_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_customer.grouping_agent_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_customer_group_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_customer.ebs_payment_term_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_ebs_payment_term_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_sale_order.res_company_cost_margin_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_intercompany_cost_margin_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_sale_order.occupancy_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_occupancy_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_customer.res_partner_chain_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_sales_configuration_partner_chain_menu'))]"/>
+        
+    </record>
+
+
+    <!-- Access Hidden Menus Inventory->Operations in Groups -->
+
+    <record model="ir.ui.menu" id="stock.all_picking">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_operations_adjustments_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_procurement_compute">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_operations_run_scheduler_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_stock_scrap">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_operations_scrap_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_action_inventory_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_operations_transfers_menu'))]"/>
+        
+    </record>
+    
+    
+
+    <!-- Access Hidden Menus Inventory->Master Data in Groups -->
+
+    <record model="ir.ui.menu" id="stock.menu_action_production_lot_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_master_data_lots_serial_numbers_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_package">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_master_data_packages_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.product_product_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_master_data_product_variants_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_product_variant_config_stock">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_master_data_products_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_reordering_rules_config">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_master_data_reordering_rules_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Inventory->Reporting in Groups -->
+
+    <record model="ir.ui.menu" id="stock.menu_forecast_inventory">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_reporting_forecasted_inventory_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_valuation">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_reporting_inventory_report_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock_account.menu_valuation">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_reporting_inventory_valuation_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.stock_move_line_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_reporting_product_moves_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.stock_move_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_reporting_stock_moves_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock_enterprise.stock_dashboard_menuitem">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_reporting_warehouse_analysis_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Inventory->Configuration in Groups -->
+    <record model="ir.ui.menu" id="stock.menu_stock_general_settings">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_configuration_settings_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_action_location_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_configuration_locations_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_pickingtype">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_configuration_operations_types_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_putaway">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_configuration_putaway_rules_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_routes_config">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_configuration_routes_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_action_rules_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_configuration_rules_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_action_warehouse_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_configuration_warehouses_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_attribute_action">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_configuration_attributes_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_wms_barcode_nomenclature_all">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_configuration_barcode_nomenclatures_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_product_category_config_stock">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_configuration_product_categories_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_product_packagings">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_configuration_product_packagings_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_stock_uom_form_action">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_configuration_uom_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="stock.menu_stock_uom_categ_form_action">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_inventory_configuration_uom_categories_menu'))]"/>
+        
+    </record>
+
+
+    <!-- Access Hidden Menus Purchase->Orders in Groups -->
+ 
+    <record model="ir.ui.menu" id="dh_purchase_order.purchase_order_line_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_purchase_order_detail_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="purchase.menu_purchase_form_action">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_purchase_orders_menu'))]"/>
+        
+    </record>
+    
+    <record model="ir.ui.menu" id="purchase.menu_purchase_rfq">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_requests_for_quotation_menu'))]"/>
+        
+    </record>
+    
+    <record model="ir.ui.menu" id="purchase.menu_procurement_management_supplier_name">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_orders_vendors_menu'))]"/>
+        
+    </record>
+    
+    <!-- Access Hidden Menus Purchase->Products in Groups -->
+    <record model="ir.ui.menu" id="purchase.product_product_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_products_product_variants_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="purchase.menu_procurement_partner_contact_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_products_products_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Purchase->Reporting in Groups -->
+    <record model="ir.ui.menu" id="purchase.menu_report_purchase">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_reporting_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Purchase->Configuration in Groups -->
+    <record model="ir.ui.menu" id="dh_purchase_order.menu_purchase_notification_settings">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_configuration_notification_settings_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="purchase.menu_purchase_general_settings">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_configuration_settings_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_customer.menu_vendor_contract_type">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_configuration_supplier_contract_type_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="purchase.menu_product_pricelist_action2_purchase">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_configuration_vendor_pricelists_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="purchase.menu_product_category_config_purchase">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_configuration_product_categories_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="purchase.menu_purchase_uom_form_action">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_configuration_units_of_measure_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="purchase.menu_purchase_uom_categ_form_action">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_purchase_configuration_units_of_measure_categories_menu'))]"/>
+        
+    </record>
+    
+
+    <!-- Access Hidden Menus Cash Flow->Cashflow in Groups -->
+    <record model="ir.ui.menu" id="sul_cashflow.activities_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_cashflow_activities_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sul_cashflow.bank_equivalent_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_cashflow_bank_cash_equivalent_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sul_cashflow.code_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_cashflow_code_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="sul_cashflow.movement_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_cashflow_movement_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Cash Flow->Reporting in Groups -->
+    <record model="ir.ui.menu" id="sul_cashflow.cashflow_report_wizard_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_cashflow_reporting_statement_menu'))]"/>
+        
+    </record>
+
+
+    <!-- Access Hidden Menus Incentives->Incentives in Groups -->
+    <record model="ir.ui.menu" id="dh_incentive.main_menu_dh_incentive">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_incentives_incentives_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Incentives->Voucher in Groups -->
+    <record model="ir.ui.menu" id="dh_incentive.main_menu_voucher">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_incentives_voucher_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Incentives->Settlement in Groups -->
+    <record model="ir.ui.menu" id="dh_incentive.main_menu_settled_by_deposit">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_incentives_settlement_deposit_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_incentive.main_menu_settled_by_voucher">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_incentives_settlement_voucher_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Incentives->Complimentary in Groups -->
+    <record model="ir.ui.menu" id="dh_incentive.main_menu_complimentary">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_incentives_complimentary_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Incentives->Incentive Schema Logs in Groups -->
+    <record model="ir.ui.menu" id="dh_incentive.main_menu_dh_incentive_logs">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_incentives_schema_logs_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Incentives->Cek Incentive in Groups -->
+    <record model="ir.ui.menu" id="tri_incentive_schema_menu.menu_main_incentive_cek1">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_incentives_cek_schema_draft_menu'))]"/>
+        
+    </record>
+
+
+    <!-- Access Hidden Menus Cash Advance->Pre Approval in Groups -->
+    <record model="ir.ui.menu" id="dh_cash_advance.menu_dh_cash_advance_other">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_cash_advance_pre_approval_other_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_cash_advance.menu_dh_cash_advance_travel">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_cash_advance_pre_approval_travel_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Cash Advance->Cash Settlement in Groups -->
+    <record model="ir.ui.menu" id="dh_cash_advance.menu_dh_cash_settlement_other">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_cash_advance_cash_settlement_other_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_cash_advance.menu_dh_cash_settlement_travel">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_cash_advance_cash_settlement_travel_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Cash Advance->Configuration in Groups -->
+    <record model="ir.ui.menu" id="dh_cash_advance.menu_type_entertainment">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_cash_advance_configuration_type_of_expense_menu'))]"/>
+        
+    </record>
+    
+
+
+    <!-- Access Hidden Menus Tax Management->Generate VAT Out in Groups -->
+    <record model="ir.ui.menu" id="dh_tax.main_menu_dh_tax_generate_vat_out">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_tax_management_generate_vat_out_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Tax Management->Calculate Net Off in Groups -->
+    <record model="ir.ui.menu" id="dh_tax.main_menu_dh_tax_calculate_net_off">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_tax_management_calculate_net_off_menu'))]"/>
+        
+    </record>
+
+    <!-- Access Hidden Menus Tax Management->COA Configuration in Groups -->
+    <record model="ir.ui.menu" id="dh_tax.main_menu_dh_tax_coa_configuration">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_tax_management_coa_configuration_menu'))]"/>
+        
+    </record>
+
+
+    <!-- Access Hidden Menus Accounting->Accounting in Groups -->
+    <record model="ir.ui.menu" id="account_accountant.menu_action_change_lock_date">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_lock_dates_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_manual_reconciliation">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reconciliation_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_tax_adjustment">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_tax_adjustments_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_multicurrency_revaluation.menu_view_account_currency_revaluation_wizard">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_currency_revaluation_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="bad_debt.bad_debt_entries">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_generate_bad_debt_entries_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_moves_journal_bank_cash">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_bank_and_cash_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_moves_journal_misc">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_miscellaneous_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_moves_journal_purchase">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_purchases_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_moves_journal_sales">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_sales_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_moves_ledger_general">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_accounting_general_ledger_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_moves_ledger_partner">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_accounting_partner_ledger_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_analytic_lines_tree">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_analytic_items_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_asset.menu_action_account_asset_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_assets_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_auto_transfer.menu_auto_transfer">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_automatic_transfers_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_budget.menu_act_crossovered_budget_view">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_budgets_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_asset.menu_action_account_expense_recognition">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_deferred_expenses_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_asset.menu_action_account_revenue_recognition">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_deferred_revenues_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_move_journal_line_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_journal_entries_menu'))]"/>
+        
+    </record>
+    
+    <record model="ir.ui.menu" id="account.menu_action_account_moves_all">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_journal_items_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_payment.custom_import_payment_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_import_payment_menu'))]"/>
+        
+    </record>
+
+
+    <!-- Accounting->EFaktur -->
+    <record model="ir.ui.menu" id="ds_e_faktur.menu_action_vat_export_efaktur">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_vat_export_efaktur_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="ds_e_faktur.menu_action_view_faktur_range_wizard">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_generate_tax_invoice_serial_number_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="ds_e_faktur.menu_action_view_import_efaktur_wiz">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_vat_import_efaktur_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="ds_e_faktur.menu_action_vat_in_efaktur">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_vat_in_efaktur_imported_menu'))]"/>
+        
+    </record>
+
+
+    <!-- Access Hidden Menus Accounting->Reporting in Groups -->
+    <record model="ir.ui.menu" id="account_reports.menu_action_account_report_cj">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_consolidated_journals_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_reports.menu_action_account_report_general_ledger">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_general_ledger_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_reports.menu_print_journal">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_journals_audit_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_reports.menu_action_account_report_gt">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_tax_report_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_reports.menu_action_account_report_coa">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_trial_balance_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_multicurrency_revaluation.currency_unrealized_report_wizard_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_currency_revaluation_report_menu'))]"/>
+        
+    </record>
+
+
+    <!-- Allow updating on noupdate=True records -->
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value eval="[('module', '=', 'account_reports'), ('name', 'in', 
+                        [
+                            'account_financial_html_report_menu_2', 
+                            'account_financial_html_report_menu_3', 
+                            'account_financial_html_report_menu_1'
+                        ]
+                        )]" />
+        </function>
+        <value eval="{'noupdate': False}" />
+    </function>
+
+    <record model="ir.ui.menu" id="account_reports.account_financial_html_report_menu_2">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_balance_sheet_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_reports.account_financial_html_report_menu_3">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_executive_summary_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_reports.account_financial_html_report_menu_1">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_profit_and_loss_menu'))]"/>
+        
+    </record>
+
+    <!-- Revoke noupdate change -->
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value eval="[('module', '=', 'account_reports'), ('name', 'in', 
+                        [
+                            'account_financial_html_report_menu_2', 
+                            'account_financial_html_report_menu_3', 
+                            'account_financial_html_report_menu_1'
+                        ]
+                        )]" />
+        </function>
+        <value eval="{'noupdate': True}" />
+    </function>
+
+
+
+    <record model="ir.ui.menu" id="account_reports.menu_action_account_report_cash_flow">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_cash_flow_statement_menu'))]"/>
+        
+    </record>
+
+
+    <record model="ir.ui.menu" id="account_reports.menu_action_report_account_analytic">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_analytic_report_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_asset.menu_action_account_report_assets">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_assets_report_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_budget.menu_act_crossovered_budget_lines_view">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_budgets_analysis_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="iam_dsr_report.dsr_report">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_dsr_report_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_invoice_report_all">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_invoices_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_custom_report.menu_action_invoice_analysis_report">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_invoices_analysis_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="iam_summary_ar_bad_debt.summary_ar_report">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_summary_ar_by_bad_debt_report_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_reports.menu_action_account_report_aged_payable">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_aged_payable_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_reports.menu_action_account_report_aged_receivable">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_aged_receivable_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="asd_account_report_aging.menu_wizard_account_report_aging">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_aged_report_xlsx_menu'))]"/>
+        
+    </record>
+    
+    <record model="ir.ui.menu" id="account_reports.menu_action_account_report_partner_ledger">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_partner_ledger_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_custom_report.account_custom_aging_ap">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_aging_ap_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_custom_report.account_custom_aging_ap_clearing">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_aging_ap_clearing_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_custom_report.report_diff_credit_limit">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_credit_limit_jarvis_vs_odoo_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_custom_report.account_deposit_to_supplier">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_deposit_to_supplier_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_custom_report.report_dpo">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_dpo_report_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="asd_mg_account.menu_export_journal_items_wizard">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_export_journal_items_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_incentive.account_incentive_report">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_reporting_incentive_report_menu'))]"/>
+        
+    </record>
+
+
+    <!-- Access Hidden Menus Accounting->Configuration in Groups -->
+    <record model="ir.ui.menu" id="account_accountant.menu_account_group">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_account_groups_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_accountant.account_tag_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_account_tags_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_asset.menu_action_account_asset_model_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_asset_models_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="bad_debt.bad_debt_conf">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_bad_debt_configuration_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_budget.menu_budget_post_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_budgetary_positions_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_chart_of_accounts_menu'))]"/>
+        
+    </record>
+    
+    <record model="ir.ui.menu" id="dh_payment.coa_payment_type_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_coa_payment_type_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_currency_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_currencies_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_asset.menu_action_account_expense_model_recognition">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_deferred_expense_models_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_asset.menu_action_account_revenue_model_recognition">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_deferred_revenue_models_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="dh_payment.menu_action_partner_deposit_account">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_deposit_account_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_accountant.menu_account_fiscal_year">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_fiscal_years_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_journal_group_list">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_journal_groups_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_online_synchronization.menu_action_online_link_account">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_online_synchronization_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_accountant.menu_product_product_categories">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_product_categories_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.action_account_reconcile_model_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_reconciliation_models_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.account_report_folder">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_reporting_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.account_analytic_group_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_analytic_account_groups_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.account_analytic_def_account">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_analytic_accounts_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.account_analytic_tag_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_analytic_tags_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="ds_e_faktur.menu_action_faktur_range">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_tax_invoice_serial_number_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_fiscal_position_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_fiscal_positions_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_followup.account_followup_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_follow_up_levels_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_incoterm_open">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_incoterms_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_journal_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_journals_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_payment_term_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_payment_terms_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_tax_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_taxes_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_rounding_form_view">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_cash_roundings_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account_reports.menu_account_financial_reports_tree">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_financial_reports_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_configure_tax_report">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_tax_report_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_bank_journal_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_add_bank_account_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_action_account_invoice_bank_journal_form">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_bank_accounts_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="payment.payment_acquirer_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_payment_acquirers_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="payment.payment_icon_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_payment_icons_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="payment.payment_transaction_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_payment_transactions_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="payment.payment_token_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_saved_payment_data_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="asd_payment.agent_prepayment_type_menu">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_agent_payment_type_menu'))]"/>
+        
+    </record>
+
+    <record model="ir.ui.menu" id="account.menu_account_config">
+        <field name="groups_id" eval="[(5,), (4,ref('asd_security_matrix.group_accounting_configuration_settings_menu'))]"/>
+        
+    </record>
+
+</odoo>

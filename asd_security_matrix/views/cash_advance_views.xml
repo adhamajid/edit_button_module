@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cash_advance_security_form">
+            <field name="name">account.cash.advance.security.form</field>
+            <field name="model">account.cash.advance</field>
+            <field name="priority">999</field>
+            <field name="inherit_id" ref="dh_cash_advance.cash_advance_form_view"/>
+            <field name="arch" type="xml">
+
+                <!-- inherit agar muncul ketika didebug agar file pyhton berjalan-->
+                <xpath expr="//notebook" position="inside">
+                    <page string="Other Info">
+                        <group name="access" string="Access" groups="base.group_no_one">
+                            <field name="has_register_payment_cash_advance_preapproval"/>
+                        </group>
+                    </page>
+                    
+                </xpath>
+
+                <!-- inherit default button register payment -->
+                <xpath expr="//button[@name='action_pay_advance']" position="attributes">
+                    <attribute name="groups" eval="False" />
+                    <attribute name="attrs">{'invisible': 
+                    [
+                        '|',
+                        ('state', 'not in', 'accounting_approved'),
+                        ('has_register_payment_cash_advance_preapproval', '=', False)
+                    ]}</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record model="ir.ui.view" id="view_account_payment_security_form">
+            <field name="name">account.payment.security.form</field>
+            <field name="model">account.payment</field>
+            <field name="priority">999</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//form/sheet" position="inside">
+                    <notebook>
+                        <page string="Other Info">
+                            <group name="access" string="Access" groups="base.group_no_one">
+                               <field name="has_reverse_acc"/>
+                            </group>
+                        </page>
+                    </notebook>
+                    
+                </xpath>
+
+                <!-- inherit default button reverse Invoices Incentive -->
+                <xpath expr="//button[@name='action_reverse']" position="attributes">
+                    <attribute name="groups" eval="False" />
+                    <attribute name="states" eval="False" />
+                    <attribute name="attrs">{'invisible': [
+                        '|', 
+                        '|', 
+                        '|', 
+                        ('state', 'not in', ['posted','sent']),
+                        ('state', 'in', ['draft','cancelled']),
+                        ('partner_type','not in',('customer','supplier')),
+                        ('has_reverse_acc', '=', False),
+                    ]}</attribute>
+                </xpath>
+                
+            </field>
+        </record>
+</odoo>
